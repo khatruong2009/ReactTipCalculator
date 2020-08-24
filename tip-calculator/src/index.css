@@ -7,3 +7,44 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.header {
+  text-align: center;
+}
+
+.calculator {
+  margin: 0 auto;
+  width: 25%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: thistle;
+}
+
+.calculator-header {
+  background-color: black;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.bill-amount {
+  margin-top: 10%;
+}
+
+.service {
+  margin-top: 10%;
+}
+
+.service select {
+  width: 40%;
+}
+
+.service select option {
+  text-align: center;
+}
+
+.people input {
+  width: 25%;
+}
+
+.button {
+  
+}
