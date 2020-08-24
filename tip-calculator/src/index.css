@@ -12,7 +12,7 @@ body {
 }
 
 .calculator {
-  margin: 0 auto;
+  margin: 5% auto;
   width: 25%;
   text-align: center;
   border-radius: 10px;
@@ -52,8 +52,8 @@ body {
 .button {
   margin-top: 10%;
   font-size: 2rem;
-  background-color: darkblue;
-  color: thistle;
+  background-color: black;
+  color: white;
   border-radius: 10px;
   margin-bottom: 10%;
   opacity: .7;
