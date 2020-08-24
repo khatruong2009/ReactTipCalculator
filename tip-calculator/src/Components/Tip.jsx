@@ -1,6 +1,7 @@
 import React from "react";
 import Question from "./Question";
 import Input from "./Input";
+import Result from "./Result";
 
 function Tip() {
   return(
@@ -31,6 +32,10 @@ function Tip() {
       </div>
 
       <button className="button" type="submit">Calculate</button>
+
+      <div className="result">
+
+      </div>
 
     </div>
   )

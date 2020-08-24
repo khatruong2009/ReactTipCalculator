@@ -41,10 +41,25 @@ body {
   text-align: center;
 }
 
+.people {
+  margin-top: 10%;
+}
+
 .people input {
   width: 25%;
 }
 
 .button {
-  
+  margin-top: 10%;
+  font-size: 2rem;
+  background-color: darkblue;
+  color: thistle;
+  border-radius: 10px;
+  margin-bottom: 10%;
+  opacity: .7;
+}
+
+.button:hover {
+  opacity: 1;
+  transition: .3s;
 }
