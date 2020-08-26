@@ -34,7 +34,7 @@ function Tip() {
       <button className="button" type="submit">Calculate</button>
 
       <div className="result">
-
+        <Result />
       </div>
 
     </div>
