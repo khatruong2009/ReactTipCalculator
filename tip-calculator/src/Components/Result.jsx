@@ -15,7 +15,7 @@ function Result(props) {
 
   return (
     <div>
-      <p>{}</p>
+      <p>{props.bill}</p>
     </div>
   )
 }
