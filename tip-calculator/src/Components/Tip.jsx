@@ -41,10 +41,6 @@ function Tip() {
   )
 }
 
-var bill = document.getElementById("bill");
-var service = document.getElementById("service");
-var people = document.getElementById("people");
-var button = document.getElementById("button");
+
 
 export default Tip;
-export {bill, people, service};
