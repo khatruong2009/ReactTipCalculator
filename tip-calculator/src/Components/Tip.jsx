@@ -13,12 +13,12 @@ function Tip() {
 
       <div className="bill-amount">
         <Question question="How much was your bill?" />
-        $<Input type="number" />
+        $<Input type="number" id="bill" />
       </div>
 
       <div className="service">
         <Question question="How was your service?" />
-        <select>
+        <select id="service">
           <option value="great" className="great">Great</option>
           <option value="good" className="good">Good</option>
           <option value="okay" className="okay">Okay</option>
@@ -28,10 +28,10 @@ function Tip() {
 
       <div className="people">
         <Question question="How many people are sharing the bill?" />
-        <Input type="number" /> people
+        <Input type="number" id="people" /> people
       </div>
 
-      <button className="button" type="submit">Calculate</button>
+      <button className="button" type="submit" id="button">Calculate</button>
 
       <div className="result">
         <Result />
@@ -41,4 +41,10 @@ function Tip() {
   )
 }
 
+var bill = document.getElementById("bill");
+var service = document.getElementById("service");
+var people = document.getElementById("people");
+var button = document.getElementById("button");
+
 export default Tip;
+export {bill, people, service};
