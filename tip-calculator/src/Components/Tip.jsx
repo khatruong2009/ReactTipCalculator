@@ -1,11 +1,51 @@
-import React from 'react';
-import Question from './Question';
-import Input from './Input';
-import Result from './Result';
-
-var bill = document.querySelector('#bill');
+import React, {useState} from 'react';
 
 function Tip() {
+
+  var service = document.getElementById("service");
+
+  var tipPercentage;
+  // switch (service) {
+  //   case "great":
+  //     tipPercentage = .2;
+  //     break;
+  //   case "good":
+  //     tipPercentage = .185;
+  //     break;
+  //   case "okay":
+  //     tipPercentage = .17;
+  //     break;
+  //   case "bad":
+  //     tipPercentage = .15;
+  //     break;
+  //   default:
+  //     tipPercentage = .2;
+  //     break;
+  // }
+  // console.log(tipPercentage);
+
+  const [bill, setBill] = useState(0);
+  const [people, setPeople] = useState(0);
+  const [result, setResult] = useState();
+
+  var tip = bill * 0.2;
+  var total = bill + tip;
+
+  console.log(typeof(bill));
+  
+  function handleChange(event) {
+    setBill(parseFloat(event.target.value));
+  }
+
+  function handleChangePeople(event){
+    setPeople(parseInt(event.target.value));
+  }
+
+  function handleClick(event) {
+    var endResult = total / people;
+    setResult(endResult.toFixed(2));
+  }
+
   return (
     <div className='calculator'>
       <div className='calculator-header'>
@@ -13,12 +53,17 @@ function Tip() {
       </div>
 
       <div className='bill-amount'>
-        <Question question='How much was your bill?' />
-        $<Input type='number' id='bill' />
+        <p>How much was your bill?</p>
+        $<input 
+          value={bill} 
+          type="number" 
+          id="bill" 
+          onChange={handleChange}
+          />
       </div>
 
       <div className='service'>
-        <Question question='How was your service?' />
+        <p>How was your service?</p>
         <select id='service'>
           <option value='great' className='great'>
             Great
@@ -36,16 +81,24 @@ function Tip() {
       </div>
 
       <div className='people'>
-        <Question question='How many people are sharing the bill?' />
-        <Input type='number' id='people' /> people
+        <p>How many people are sharing the bill?</p>
+        <input 
+          value={people} 
+          type='number' 
+          id='people' 
+          onChange={handleChangePeople}
+          /> people
       </div>
 
-      <button className='button' type='submit' id='button'>
+      <button className='button' onClick={handleClick} id='button'>
         Calculate
       </button>
 
       <div className='result'>
-        <Result bill={bill} />
+        <p>The tip amount is ${tip.toFixed(2)}</p>
+        <p>The total bill was ${total.toFixed(2)}</p>
+        <p>The bill is being split between {people} people.</p>
+        <p>The amount paid per person is ${result}</p>
       </div>
     </div>
   );
