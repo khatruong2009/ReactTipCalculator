@@ -15,7 +15,23 @@ function Input() {
       $<input
           value={bill}
           type="number"
+          name="bill"
       />
+    </div>
+
+    <div className="service">
+      <p>How was your service?</p>
+      <select>
+        <option>Great</option>
+        <option>Good</option>
+        <option>Okay</option>
+        <option>Poor</option>
+      </select>
+    </div>
+
+    <div className="people">
+      <p>How many people are in your group?</p>
+      <input></input> people
     </div>
   </div>
   )
