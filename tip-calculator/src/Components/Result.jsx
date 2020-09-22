@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Result() {
+function Result(props) {
 
   const [hidden, setHidden] = useState(true);
 
