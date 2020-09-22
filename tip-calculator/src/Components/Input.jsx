@@ -5,7 +5,7 @@ function Input() {
   const [bill, setBill] = useState();
 
   return (
-    <div className="calculator">
+    <div>
     <div className="calculator-header">
       <h2>Calculator</h2>
     </div>
