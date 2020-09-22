@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from "./Header";
 import Input from "./Input";
 import Result from "./Result";
@@ -18,19 +18,30 @@ function App() {
 
     totalTip = tipPercentage * bill;
 
-    totalBill = totalTip + bill;
+    totalBill = totalTip + Number(bill);
 
     share = totalBill / people;
 
-    console.log(people, bill, service);
+    console.log(tipPercentage, totalTip, totalBill, share);
+    return {
+      tip: totalTip,
+      bill: totalBill,
+      share: share
+    }
   }
 
   return (
     <div>
       <Header/>
       <div className="calculator">
-        <Input calculate={Calculate} />
-        <Result/>
+        <Input 
+          calculate={Calculate} 
+        />
+        <Result 
+          bill={Calculate.bill} 
+          tip={Calculate.tip} 
+          share={Calculate.share}
+        />
       </div>
     </div>
   );
