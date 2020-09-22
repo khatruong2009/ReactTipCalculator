@@ -2,28 +2,6 @@ import React, {useState} from 'react';
 
 function Tip() {
 
-  var service = document.getElementById("service");
-
-  var tipPercentage;
-  // switch (service) {
-  //   case "great":
-  //     tipPercentage = .2;
-  //     break;
-  //   case "good":
-  //     tipPercentage = .185;
-  //     break;
-  //   case "okay":
-  //     tipPercentage = .17;
-  //     break;
-  //   case "bad":
-  //     tipPercentage = .15;
-  //     break;
-  //   default:
-  //     tipPercentage = .2;
-  //     break;
-  // }
-  // console.log(tipPercentage);
-
   const [bill, setBill] = useState(0);
   const [people, setPeople] = useState(0);
   const [result, setResult] = useState();
