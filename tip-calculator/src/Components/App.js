@@ -35,17 +35,20 @@ function App() {
 
   return (
     <div>
-      <Header/>
       <div className="calculator">
-        <Input 
-          calculate={Calculate} 
-        />
-        <Result 
-          bill={totalBill} 
-          tip={totalTip} 
-          share={totalShare}
-          hidden={hidden}
-        />
+        <Header/>
+        <div className="separate">
+          <Input 
+            calculate={Calculate} 
+          />
+          <Result 
+            bill={totalBill} 
+            tip={totalTip} 
+            share={totalShare}
+            hidden={hidden}
+          />
+        </div>
+        
       </div>
     </div>
   );

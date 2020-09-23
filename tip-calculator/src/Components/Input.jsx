@@ -23,42 +23,38 @@ function Input(props) {
   }
 
   return (
-    <div>
-    <div className="calculator-header">
-      <h2>Calculator</h2>
-    </div>
+    <div className="input">
+      <div className="bill-amount">
+        <p>What is the total bill amount?</p>
+        $<input
+            value={inputBill}
+            onChange={changeBill}
+            type="number"
+            name="bill"
+        />
+      </div>
 
-    <div className="bill-amount">
-      <p>What is the total bill amount?</p>
-      $<input
-          value={inputBill}
-          onChange={changeBill}
+      <div className="service">
+        <p>How was your service?</p>
+        <select onChange={changeService} value={inputService}>
+          <option value="Great">Great</option>
+          <option value="Good">Good</option>
+          <option value="Okay">Okay</option>
+          <option value="Poor">Poor</option>
+        </select>
+      </div>
+
+      <div className="people">
+        <p>How many people are in your group?</p>
+        <input
+          value={inputPeople}
+          onChange={changePeople}
           type="number"
-          name="bill"
-      />
-    </div>
+          name="people"
+        /> people
+      </div>
 
-    <div className="service">
-      <p>How was your service?</p>
-      <select onChange={changeService} value={inputService}>
-        <option value="Great">Great</option>
-        <option value="Good">Good</option>
-        <option value="Okay">Okay</option>
-        <option value="Poor">Poor</option>
-      </select>
-    </div>
-
-    <div className="people">
-      <p>How many people are in your group?</p>
-      <input
-        value={inputPeople}
-        onChange={changePeople}
-        type="number"
-        name="people"
-      /> people
-    </div>
-
-    <button className="button" onClick={handleClick}>Calculate</button>
+      <button className="button" onClick={handleClick}>Calculate</button>
   </div>
   )
 }
