@@ -19,7 +19,7 @@ function Input(props) {
   }
 
   function handleClick() {
-    props.calculate(inputBill, inputService, inputPeople);
+    props.calculate(Number(inputBill), inputService, Number(inputPeople));
   }
 
   return (

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "./Header";
 import Input from "./Input";
 import Result from "./Result";
 
 function App() {
 
-  var totalBill, totalTip, share, tipPercentage;
+  const [totalBill, setTotalBill] = useState();
+  const [totalTip, setTotalTip] = useState();
+  const [totalShare, setTotalShare] = useState();
+
+  const [hidden, setHidden] = useState(true);
+
+  var fullBill, tip, share, tipPercentage;
 
   function Calculate(bill, service, people) {
     if (service === "Great") {
@@ -16,18 +22,15 @@ function App() {
       tipPercentage = .165;
     } else tipPercentage = .15;
 
-    totalTip = tipPercentage * bill;
+    tip = (tipPercentage * bill);
+    fullBill = (bill + tip);
+    share = (fullBill / people);
 
-    totalBill = totalTip + Number(bill);
+    setTotalTip(tip.toFixed(2));
+    setTotalBill(fullBill.toFixed(2));
+    setTotalShare(share.toFixed(2));
 
-    share = totalBill / people;
-
-    console.log(tipPercentage, totalTip, totalBill, share);
-    return {
-      tip: totalTip,
-      bill: totalBill,
-      share: share
-    }
+    setHidden(false);
   }
 
   return (
@@ -38,9 +41,10 @@ function App() {
           calculate={Calculate} 
         />
         <Result 
-          bill={Calculate.bill} 
-          tip={Calculate.tip} 
-          share={Calculate.share}
+          bill={totalBill} 
+          tip={totalTip} 
+          share={totalShare}
+          hidden={hidden}
         />
       </div>
     </div>
